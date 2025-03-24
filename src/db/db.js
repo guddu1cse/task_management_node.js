@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USER } from "../config/config.js";
 dotenv.config();
 
+//db configurations
 const db = mysql.createPool({
     host: DB_HOST,
     user: DB_USER,
@@ -15,8 +16,10 @@ const db = mysql.createPool({
 });
 
 
+//performing queries on db
 const queryOnDb = async (query, message) => {
     try {
+        //executing query on db
         const res = await db.execute(query);
         console.log({ data: res[0], message: message.success, error: null });
         return { data: res[0], message: message.success, error: null };
@@ -26,8 +29,10 @@ const queryOnDb = async (query, message) => {
     }
 };
 
+//handling pram queries on db
 const queryOnDbWithParams = async (query, params = [], message = { success: "Query executed successfully", error: "Query execution failed" }) => {
     try {
+        //executing query on db
         const [rows] = await db.execute(query, params);
         console.log({ data: rows, message: message.success, error: null });
         return { data: rows, message: message.success, error: null };
@@ -38,4 +43,6 @@ const queryOnDbWithParams = async (query, params = [], message = { success: "Que
 };
 
 
+
+//exporting the methods
 export { queryOnDb, queryOnDbWithParams };
