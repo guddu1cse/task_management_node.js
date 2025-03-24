@@ -3,6 +3,6 @@ import { createUser, getUrl, getUser, getUsers } from '../controllers/userContro
 const router = express.Router();
 
 // router.get('/users/:id', getUsers);
-router.post('/register', createUser); // register user endpoint
+router.post('/register', createUser); //register user endpoint
 
 export default router;
