@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import { JWT_SECRET } from "../config/config.js";
 dotenv.config();
 
+//login user logic
 export const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -24,6 +25,7 @@ export const loginUser = async (req, res) => {
     }
 };
 
+//get current login user profile
 export const getProfile = async (req, res) => {
     try {
         const user = (await findUserByEmail(req.user.email)).data[0];
