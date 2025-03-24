@@ -8,7 +8,6 @@ import sequelize from "./src/config/database.js";
 import User from "./src/models/User.js";
 import Task from "./src/models/Task.js";
 import { PORT } from "./src/config/config.js";
-// import app from "./src/app.js";
 
 
 // createUserTableIfNotExist();
@@ -21,8 +20,11 @@ import { PORT } from "./src/config/config.js";
 
 const app = express();
 app.use(express.json());
+//final routes for user related operations
 app.use("/user", userRouter);
+//final routes for auth related operations
 app.use("/auth", authRouter);
+//final routes for task related operations
 app.use("/task", taskRouter);
 // sequelize.sync({ alter: true }).then(() => console.log("Database synced"));
 app.listen(PORT, () => console.log("Server started on port 3000"));
