@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
-import { JWT_SECRET } from "../config/config.js";
-dotenv.config();
+import env from "../config/config.js";
+const { JWT_SECRET } = env;
+
 
 
 //middleware for authenticating the while login user

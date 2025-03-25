@@ -1,7 +1,6 @@
 import bcrypt from "bcrypt";
-import dotenv from "dotenv";
-import { SALT_ROUNDS } from "../config/config.js";
-dotenv.config();
+import env from "../config/config.js";
+const { SALT_ROUNDS } = env;
 
 //hashing password function
 const hashPassword = async (password) => {

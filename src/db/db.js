@@ -1,7 +1,8 @@
 import mysql from "mysql2/promise";
-import dotenv from "dotenv";
-import { DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USER } from "../config/config.js";
-dotenv.config();
+import env from "../config/config.js";
+const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT } = env;
+
+
 
 //db configurations
 const db = mysql.createPool({

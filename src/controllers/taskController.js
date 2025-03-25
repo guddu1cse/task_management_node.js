@@ -1,4 +1,4 @@
-import { createTask as addTask, getTaskById, removeTaskById, updateTaskById, sortBy as sorting, filterByPriority as filterOnPriority } from "../db/teskQuery.js";
+import { createTask as addTask, getTaskById, removeTaskById, updateTaskById, sortBy as sorting, filterByPriority as filterOnPriority } from "../db/taskQuery.js";
 import { queryOnDb } from "../db/db.js";
 
 //create task
